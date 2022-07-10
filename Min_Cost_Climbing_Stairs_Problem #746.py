@@ -23,16 +23,14 @@ Explanation: You will start at index 0.
 - Pay 1 and climb two steps to reach index 9.
 - Pay 1 and climb one step to reach the top.
 The total cost is 6.
-
 Note: The problem is poorly stated and the top floor is n + 1 not n.
+This solution implement a bottom-up dynamic programming approach.
 """
 
 #[10,15,20]
-total_cost = 0
 
 def min_cost(cost):
-    #Check if array length is less than 2
-    if len(cost) < 2:
-        return cost[0]
-    
-    return min(cost[:2]) + min_cost(cost[2:])
+    cost.append(0)
+    for i in reversed(range(len(cost)-3)):
+        cost[i] += min(cost[i+1], cost[i+2])
+    return min(cost[:2])
