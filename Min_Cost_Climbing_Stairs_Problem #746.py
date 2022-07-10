@@ -23,6 +23,8 @@ Explanation: You will start at index 0.
 - Pay 1 and climb two steps to reach index 9.
 - Pay 1 and climb one step to reach the top.
 The total cost is 6.
+
+Note: The problem is poorly stated and the top floor is n + 1 not n.
 """
 
 #[10,15,20]

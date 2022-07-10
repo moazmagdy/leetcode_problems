@@ -21,18 +21,12 @@ Explanation: There are three ways to climb to the top.
 3. 2 steps + 1 step
 
 This solution implement dynamic programming with iteration.
+
 """
-# from functools import lru_cache
 
-# @lru_cache()
-
-cache = {}
 def climbStairs(n):
-    if n in cache:
-        return cache[n]
-    if n == 1 or n == 2 or n == 3:
-        cache[n] = n
-        return cache[n]
-    else:
-        cache[n] = climbStairs(n -1) + climbStairs(n-2)
-        return cache[n]
+    cache = [1, 1]
+    for i in range(1, n + 1):
+        cache.append(cache[i]+ cache[i-1])
+
+    return cache[n]
