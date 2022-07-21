@@ -27,7 +27,7 @@ def is_palindrome(head):
         num.append(head)
         head = head.next
 
-    l, r = 0, len(num) - 1
+    l, r = 0, len(num) - 1  #Create left and right pointers
     while l <= r:
         if num[l] != num[r]:
             return False
