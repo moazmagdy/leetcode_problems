@@ -27,4 +27,10 @@ def is_palindrome(head):
         num.append(head)
         head = head.next
 
-    return num[::-1] == num
+    l, r = 0, len(num) - 1
+    while l <= r:
+        if num[l] != num[r]:
+            return False
+        l += 1
+        r -= 1
+    return True
